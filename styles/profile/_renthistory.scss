@@ -1,0 +1,90 @@
+@use "../base/variable";
+@use "../base/mixin";
+
+.rent-history {
+  padding: variable.$space-lg variable.$space-md;
+
+  // Title
+  &-title {
+    font-size: variable.$font-lg;
+    margin-bottom: variable.$space-lg;
+    font-weight: 600;
+  }
+
+  // Wrapper
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: variable.$space-md;
+  }
+  // Card
+  &-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: variable.$space-md;
+    border: 1px solid variable.$color-border;
+    border-radius: variable.$radius-md;
+    box-shadow: variable.$shadow-sm;
+
+    @include mixin.xs-mobile {
+      padding: variable.$space-sm variable.$space-xs;
+    }
+
+    // Left Area
+    .left-area {
+      display: flex;
+      align-items: center;
+      gap: variable.$space-lg;
+
+      @include mixin.xs-mobile {
+        gap: variable.$space-sm;
+      }
+
+      // Img
+      img {
+        width: 150px;
+        height: 80px;
+        border-radius: variable.$radius-md;
+
+        @include mixin.xs-mobile {
+          width: 90px;
+          height: 55px;
+        }
+      }
+
+      // Content
+      .content {
+        // Title
+        h4 {
+          font-size: variable.$font-md;
+          margin-bottom: variable.$space-sm;
+        }
+
+        // Dates
+        p {
+          color: variable.$color-light-gray;
+        }
+      }
+    }
+
+    // Status
+    .status {
+      font-size: variable.$font-sm;
+      padding: variable.$space-xs variable.$space-sm;
+      border-radius: variable.$radius-full;
+      font-weight: 600;
+      white-space: nowrap;
+
+      &.complated {
+        background-color: #e7f9f1;
+        color: #2e8b58;
+      }
+
+      &.cancelled {
+        background-color: #fbeaea;
+        color: #c8534a;
+      }
+    }
+  }
+}

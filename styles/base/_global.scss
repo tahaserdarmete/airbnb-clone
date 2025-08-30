@@ -1,0 +1,10 @@
+@use "./variable";
+
+.hero-container {
+  background-color: variable.$color-light-pink;
+  padding: variable.$space-xl variable.$space-lg;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: variable.$space-md;
+}
